@@ -1,0 +1,19 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Uploaded PDFs
+app/static/uploads/*
+!app/static/uploads/.gitkeep
+
+# Company seal & signature (runtime only)
+app/config/*
+!app/config/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db

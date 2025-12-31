@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seal & Signature Stamping</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f6f6;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            margin-top: 5px;
+            width: 100%;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e40af;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Company Seal & Signature Tool</h2>
+
+    <!-- ONE TIME SETUP -->
+    <h3>One-time Setup</h3>
+    <form action="/setup" method="post" enctype="multipart/form-data">
+        <label>Upload Company Seal (PNG)</label>
+        <input type="file" name="seal" required>
+
+        <label>Upload Signature (PNG)</label>
+        <input type="file" name="signature" required>
+
+        <button type="submit">Save Configuration</button>
+    </form>
+
+    <hr>
+
+    <!-- GENERATE DOCUMENT -->
+    <h3>Generate Stamped Document</h3>
+    <form action="/generate" method="post" enctype="multipart/form-data">
+        <label>Upload PDF File</label>
+        <input type="file" name="pdf" required>
+
+        <button type="submit">Generate & Download PDF</button>
+    </form>
+
+    <div class="note">
+        ⚠️ Digitally applied image of authorized seal and signature.  
+        Not valid for government or legal filings.
+    </div>
+
+</div>
+
+</body>
+</html>
